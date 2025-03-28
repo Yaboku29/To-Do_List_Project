@@ -1,0 +1,26 @@
+[
+    {
+        "deadline": "2025-10-29",
+        "deskripsi": "Belajar Koding",
+        "prioritas": "Tinggi",
+        "status": "Belum Selesai"
+    },
+    {
+        "deadline": "2025-6-12",
+        "deskripsi": "Belajar",
+        "prioritas": "Sedang",
+        "status": "Selesai"
+    },
+    {
+        "deadline": "2025-04-12",
+        "deskripsi": "main game",
+        "prioritas": "Rendah",
+        "status": "Belum Selesai"
+    },
+    {
+        "deadline": "2025-10-10",
+        "deskripsi": "Belajar HTML",
+        "prioritas": "Sedang",
+        "status": "Belum Selesai"
+    }
+]
