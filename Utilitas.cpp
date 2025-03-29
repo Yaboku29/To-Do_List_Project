@@ -32,7 +32,8 @@ void tampilkanHeader(){
 }
 
 void clearScreen(){
-    cout<<"\033[2J";
+    system("cls");
+    cout<<"\033[2J\033[H";
     cout<<"\033[1;1H";
     tampilkanHeader();
 }
