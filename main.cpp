@@ -1,5 +1,6 @@
 #include "TODO.hpp"
 #include "Utilitas.hpp"
+#include "file_io.hpp"
 
 // void setColor(const string &color);
 void menu();
@@ -26,8 +27,10 @@ void menu(){
     cout<<"5. Ubah status\n";
     cout<<"6. Cari Tugas\n";
     cout<<"7. Filter Tugas\n";
+    cout<<"8. Export File To-Do List\n";
+    cout<<"9. Import File To-Do List\n";
     setColor(RED);
-    cout<<"8. Keluar\n";
+    cout<<"10. Keluar\n";
     setColor(GREEN);
     cout<<"Pilih menu: ";
     cin>>pilihan;
@@ -49,7 +52,7 @@ void menu(){
         system("pause");
         menu();
         break;
-    case 8:
+    case 10:
         cout<<"Keluar dari program...\n";
         break;
     case 4:
@@ -69,6 +72,16 @@ void menu(){
         break;
     case 7:
         filter_tugas();
+        system("pause");
+        menu();
+        break;
+    case 8:
+        eksporData();
+        system("pause");
+        menu();
+        break;
+    case 9:
+        imporData();
         system("pause");
         menu();
         break;
