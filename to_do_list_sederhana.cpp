@@ -85,16 +85,6 @@ void tampilkan_tugas(){
 void tambah_tugas() {
     system("cls");
     json data = bacaData();
-
-    //cout << "Isi JSON sebelum menambah tugas: " << data.dump(4) << endl; // Debug
-
-    // HAPUS PENGECEKAN data.empty() karena JSON kosong itu bukan kesalahan
-    // if (data.empty()) {
-    //     cout << "⚠ Gagal membuka file atau file kosong!\n";
-    //     system("pause");
-    //     menu();
-    // }
-
     string tugas, deadline, prioritas;
     cout << "Masukkan tugas baru: ";
     cin.ignore();
@@ -360,7 +350,7 @@ void filter_tugas(){
 }
 
 void menu(){
-    json data=bacaData();
+    //json data=bacaData();
     system("cls");
     int pilihan;
     cout<<"\n=== TO-DO LIST ===\n";
