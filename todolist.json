@@ -1,1 +1,8 @@
-[]
+[
+    {
+        "deadline": "Tidak ada",
+        "deskripsi": "Bikin Todo List",
+        "prioritas": "Tinggi",
+        "status": "Belum Selesai"
+    }
+]

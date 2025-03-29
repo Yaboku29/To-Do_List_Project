@@ -35,30 +35,46 @@ void menu(){
     {
     case 1:
         tampilkan_tugas();
+        system("pause");
+        menu();
         break;
     case 2:
         tambah_tugas();
+        system("pause");
+        menu();
         break;
     case 3:
         hapus_tugas();
+        system("pause");
+        menu();
         break;
     case 8:
         cout<<"Keluar dari program...\n";
         break;
     case 4:
         edit_tugas();
+        system("pause");
+        menu();
         break;
     case 5:
         tandai_selesai();
+        system("pause");
+        menu();
         break;
     case 6:
         cari_tugas();
+        system("pause");
+        menu();
         break;
     case 7:
         filter_tugas();
+        system("pause");
+        menu();
         break;
     default:
         cout<<"Pilihan tidak valid, coba lagi.\n";
+        system("pause");
+        menu();
         break;
     }
 }
