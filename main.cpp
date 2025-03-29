@@ -1,23 +1,26 @@
 #include "TODO.hpp"
-#include <windows.h>
 
-void setColor(int color);
+void setColor(const string &color);
 void menu();
+
+const string RED ="\033[31m]";
+const string BLUE ="\033[32m]";
+const string GREEN ="\033[33m]";
 
 int main(){
     menu();
     return 0;
 }
 
-void setColor(int color){
-    SetConsoleTextAttribute(GetStdHandle(STD_INPUT_HANDLE),color);
+void setColor(const string &color){
+    cout<<color;
 }
 
 void menu(){
     system("cls");
     int pilihan;
     cout<<"\n===>>> TO-DO LIST <<<===\n";
-    setColor(4);
+    setColor(BLUE);
     cout<<"1. Tampilkan Tugas\n";
     cout<<"2. Tambah Tugas\n";
     cout<<"3. Hapus Tugas\n";
@@ -25,9 +28,9 @@ void menu(){
     cout<<"5. Ubah status\n";
     cout<<"6. Cari Tugas\n";
     cout<<"7. Filter Tugas\n";
-    setColor(12);
+    setColor(RED);
     cout<<"8. Keluar\n";
-    setColor(7);
+    setColor(GREEN);
     cout<<"Pilih menu: ";
     cin>>pilihan;
 
