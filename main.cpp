@@ -25,9 +25,10 @@ void menu(){
     cout<<"5. Ubah status\n";
     cout<<"6. Cari Tugas\n";
     cout<<"7. Filter Tugas\n";
+    setColor(12);
     cout<<"8. Keluar\n";
-    cout<<"Pilih menu: ";
     setColor(7);
+    cout<<"Pilih menu: ";
     cin>>pilihan;
 
     switch (pilihan)
