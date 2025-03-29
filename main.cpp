@@ -17,7 +17,7 @@ void menu(){
     clearScreen();
     int pilihan;
     //cout<<BLUE_BG;
-    cout<<"\n===>>> TO-DO LIST <<<===\n";
+    cout<<"===>>> TO-DO LIST <<<===\n";
     setColor(BLUE);
     cout<<"1. Tampilkan Tugas\n";
     cout<<"2. Tambah Tugas\n";

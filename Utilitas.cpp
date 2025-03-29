@@ -13,8 +13,7 @@ void tampilkanHeader(){
         Made by:
           )";
     cout<<RED;
-    cout<<"Yaboku29"<<endl;
-      
+    cout<<"Yaboku29";
     cout << RESET << endl;  // Kembali ke warna default
 }
 
