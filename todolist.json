@@ -10,5 +10,11 @@
         "deskripsi": "Belajar Koding",
         "prioritas": "Tinggi",
         "status": "Belum Selesai"
+    },
+    {
+        "deadline": "2025-4-10",
+        "deskripsi": "Belajar Kalkulus",
+        "prioritas": "Tinggi",
+        "status": "Belum Selesai"
     }
 ]
