@@ -16,5 +16,11 @@
         "deskripsi": "Belajar Kalkulus",
         "prioritas": "Tinggi",
         "status": "Belum Selesai"
+    },
+    {
+        "deadline": "Secepatnya",
+        "deskripsi": "makan",
+        "prioritas": "Rendah",
+        "status": "Belum Selesai"
     }
 ]
