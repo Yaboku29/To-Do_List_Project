@@ -3,6 +3,12 @@
         "deadline": "Tidak ada",
         "deskripsi": "Bikin Todo List",
         "prioritas": "Tinggi",
+        "status": "Selesai"
+    },
+    {
+        "deadline": "2028-29-10",
+        "deskripsi": "Belajar Koding",
+        "prioritas": "Tinggi",
         "status": "Belum Selesai"
     }
 ]
