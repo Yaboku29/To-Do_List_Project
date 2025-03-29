@@ -18,4 +18,5 @@
 // Fungsi untuk menampilkan header ASCII "TO DO" dengan warna
 void tampilkanHeader();
 
+void clearScreen();
 #endif // UTILITAS_HPP

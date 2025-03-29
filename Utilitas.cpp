@@ -12,3 +12,9 @@ void tampilkanHeader(){
     cout << "   ╚═╝    ╚═════╝     ╚═════╝  ╚═════╝ \n";
     cout << RESET << endl;  // Kembali ke warna default
 }
+
+void clearScreen(){
+    cout<<"\033[2J";
+    cout<<"\033[1;1H";
+    tampilkanHeader();
+}
