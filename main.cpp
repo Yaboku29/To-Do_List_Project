@@ -3,22 +3,25 @@
 void setColor(const string &color);
 void menu();
 
-const string RED ="\033[31m]";
-const string BLUE ="\033[32m]";
-const string GREEN ="\033[33m]";
+const string RESET="\033[0m";
+const string RED ="\033[31m";
+const string BLUE ="\033[34m";
+const string GREEN ="\033[32m";
+const string BLUE_BG="\033[44m";
 
 int main(){
     menu();
     return 0;
 }
 
-void setColor(const string &color){
-    cout<<color;
-}
+// void setColor(const string &color){
+//     cout<<color;
+// }
 
 void menu(){
     system("cls");
     int pilihan;
+    cout<<BLUE_BG;
     cout<<"\n===>>> TO-DO LIST <<<===\n";
     setColor(BLUE);
     cout<<"1. Tampilkan Tugas\n";

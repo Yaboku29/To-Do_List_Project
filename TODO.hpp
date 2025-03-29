@@ -10,6 +10,14 @@
 using namespace std;
 using json=nlohmann::json;
 
+void setColor(const string &color);
+
+const string RESET="\033[0m";
+const string RED ="\033[31m";
+const string BLUE ="\033[34m";
+const string GREEN ="\033[32m";
+const string BLUE_BG="\033[44m";
+
 //struct tugas
 struct Tugas{
     string deskripsi;
