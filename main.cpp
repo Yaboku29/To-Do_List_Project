@@ -1,4 +1,5 @@
 #include "TODO.hpp"
+#include "Utilitas.hpp"
 
 // void setColor(const string &color);
 void menu();
@@ -13,7 +14,7 @@ int main(){
 // }
 
 void menu(){
-    system("cls");
+    clearScreen();
     int pilihan;
     //cout<<BLUE_BG;
     cout<<"\n===>>> TO-DO LIST <<<===\n";

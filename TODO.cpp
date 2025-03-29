@@ -1,4 +1,5 @@
 #include "TODO.hpp"
+#include "Utilitas.hpp"
 
 void setColor(const string &color){
     cout<<color;
@@ -41,7 +42,7 @@ void simpanData(const json& data) {
 
 //Fungsi untuk menambah, mengedit, dan menghapus
 void tambah_tugas() {
-    system("cls");
+    clearScreen();
     json data = bacaData();
     string tugas, deadline, prioritas;
     cout << "Masukkan tugas baru: ";
@@ -64,7 +65,7 @@ void tambah_tugas() {
     cout << "Tugas berhasil ditambahkan!\n";
 }
 void hapus_tugas(){
-    system("cls");
+    clearScreen();
     json data=bacaData();
     if(data.empty()){
         cout<<"belum ada tugas untuk dihapus.\n";
@@ -98,7 +99,7 @@ void hapus_tugas(){
     cout<<"Tugas berhasil dihapus!\n";
 }
 void edit_tugas(){
-    system("cls");
+    clearScreen();
     json data=bacaData();
     if(data.empty()){
         cout<<"Belum ada tugas untuk diedit\n";
@@ -142,7 +143,7 @@ void edit_tugas(){
     cout<<"Tugas berhasil diedit!\n";
 }
 void tampilkan_tugas(){
-    system("cls");
+    clearScreen();
     json data=bacaData();
     if(data.empty()){
         cout<<"Belum ada tugas.\n";
@@ -160,7 +161,7 @@ void tampilkan_tugas(){
     }
 }
 void tandai_selesai(){
-    system("cls");
+    clearScreen();
     json data=bacaData();
 
     if(data.empty()){
@@ -191,7 +192,7 @@ void tandai_selesai(){
     cout<<"Tugas berhasoil ditandai senagai 'Selesai'!\n";
 }
 void cari_tugas(){
-    system("cls");
+    clearScreen();
     json data=bacaData();
 
     if(data.empty()){
@@ -242,7 +243,7 @@ void cari_tugas(){
     }
 }
 void filter_tugas(){
-    system("cls");
+    clearScreen();
     json data=bacaData();
 
     if(data.empty()){
