@@ -15,7 +15,7 @@ int main(){
 void menu(){
     system("cls");
     int pilihan;
-    cout<<BLUE_BG;
+    //cout<<BLUE_BG;
     cout<<"\n===>>> TO-DO LIST <<<===\n";
     setColor(BLUE);
     cout<<"1. Tampilkan Tugas\n";
