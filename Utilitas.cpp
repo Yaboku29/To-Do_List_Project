@@ -15,7 +15,7 @@ void tampilkanHeader(){
             |_|      \_____/  |______/   \_____/ 
           Made by:
           )";
-    cout<<RED<<"Yaboku29";
+    cout<<RED<<"Yaboku29 & GPT(100%)";
     
     
     cout << RESET << endl;  // Kembali ke warna default
