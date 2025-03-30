@@ -36,6 +36,14 @@ void eksporData(){
         cout<<"Input invalid\n";
         return;
     }
+    ofstream jsonFile(filename+".json",ios::trunc);
+    if(!jsonFile.is_open()){
+        cout<<"Gagal membuka file JSON!\n";
+        return;
+    }
+    jsonFile<<data.dump(4);
+    jsonFile.close();
+
     if(pilihan==1) filename+=".txt";
     else filename+=".csv";
     ofstream file(filename);
@@ -65,9 +73,10 @@ void eksporData(){
 }
 void imporData(){
     string filename;
-    cout<<"Masukkan nama file yang ingin diimpor(termasuk ekstensi): ";
+    cout<<"Masukkan nama file yang ingin diimpor (tanpa ekstensi): ";
     cin.ignore();
     getline(cin,filename);
+    filename+=".json";
     ifstream file(filename);
     if(!file.is_open()){
         cout<<"Gagal membuka file!\n Pastikan nama dan ekstensi benar!\n";
@@ -76,77 +85,7 @@ void imporData(){
 
     json data;
 
-    size_t dotPos=filename.find_last_of(".");
-    if(dotPos==string::npos){
-        cout<<"Format file tidak dikenali!\n";
-        return;
-    }
-    string ext=filename.substr(dotPos);
-
-    if(ext==".txt"){
-        string line;
-        while(getline(file,line)){
-            stringstream ss(line);
-            string deskripsi,deadline,prioritas,status;
-
-            getline(ss,deskripsi,'|');
-            getline(ss,deadline,'|');
-            getline(ss,prioritas,'|');
-            getline(ss,status,'|');
-            
-            //Hapus Kutipan
-            
-            
-            
-            
-
-            json tugas={
-                {"deskripsi",deskripsi=cleanString(trim(deskripsi))},
-                {"deadline",deadline=cleanString(trim(deadline))},
-                {"prioritas",prioritas=cleanString(trim(prioritas))},
-                {"status",status=cleanString(trim(status))}
-            };
-
-            data.push_back(tugas);
-        }
-    }
-    else if(ext==".csv"){
-        string line;
-        bool isHeader=true;
-        while(getline(file,line)){
-            if(isHeader){
-                isHeader=false;
-                continue;
-            }
-
-            stringstream ss(line);
-            string deskripsi,deadline,prioritas,status;
-
-            getline(ss,deskripsi,',');
-            getline(ss,deadline,',');
-            getline(ss,prioritas,',');
-            getline(ss,status,',');
-
-            
-            
-            
-            
-
-            json tugas={
-                {"deskripsi",deskripsi=cleanString(trim(deskripsi))},
-                {"deadline",deadline=cleanString(trim(deadline))},
-                {"prioritas",prioritas=cleanString(trim(prioritas))},
-                {"status",status=cleanString(trim(status))}
-            };
-
-            data.push_back(tugas);
-        }
-    }
-    else {
-        cout<<"Format file tidak didukung!\nHanya mendukung .txt dan .csv\n";
-        return;
-    }
-
+    file>>data;
     file.close();
 
     ofstream outFile("todolist.json");
