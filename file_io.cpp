@@ -57,6 +57,7 @@ void eksporData(){
 void imporData(){
     string filename;
     cout<<"Masukkan nama file yang ingin diimpor(termasuk ekstensi): ";
+    cin.ignore();
     getline(cin,filename);
     ifstream file(filename);
     if(!file.is_open()){
