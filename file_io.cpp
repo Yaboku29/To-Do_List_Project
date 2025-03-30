@@ -1,6 +1,7 @@
 #include "file_io.hpp"
 #include "Utilitas.hpp"
 #include <fstream>
+#include <sstream>
 using json=nlohmann::json;
 using namespace std;
 
@@ -54,5 +55,77 @@ void eksporData(){
     cout<<"Data berhasil diekspor ke "<<filename<<"!\n";
 }
 void imporData(){
+    string filename;
+    cout<<"Masukkan nama file yang ingin diimpor(termasuk ekstensi): ";
+    getline(cin,filename);
+    ifstream file(filename);
+    if(!file.is_open()){
+        cout<<"Gagal membuka file!\n Pastikan nama dan ekstensi benar!\n";
+        return;
+    }
 
+    json data=bacaData();
+
+    size_t dotPos=filename.find_last_of(".");
+    if(dotPos==string::npos){
+        cout<<"Format file tidak dikenali!\n";
+        return;
+    }
+    string ext=filename.substr(dotPos);
+
+    if(ext==".txt"){
+        string line;
+        while(getline(file,line)){
+            stringstream ss(line);
+            string deskripsi,deadline,prioritas,status;
+
+            getline(ss,deskripsi,'|');
+            getline(ss,deadline,'|');
+            getline(ss,prioritas,'|');
+            getline(ss,status,'|');
+
+            json tugas={
+                {"deskripsi",deskripsi},
+                {"deadline",deadline},
+                {"prioritas",prioritas},
+                {"status",status}
+            };
+
+            data.push_back(tugas);
+        }
+    }
+    else if(ext==".csv"){
+        string line;
+        bool isHeader=true;
+        while(getline(file,line)){
+            if(isHeader){
+                isHeader=false;
+                continue;
+            }
+
+            stringstream ss(line);
+            string deskripsi,deadline,prioritas,status;
+
+            getline(ss,deskripsi,',');
+            getline(ss,deadline,',');
+            getline(ss,prioritas,',');
+            getline(ss,status,',');
+
+            json tugas={
+                {"deskripsi",deskripsi},
+                {"deadline",deadline},
+                {"prioritas",prioritas},
+                {"status",status}
+            };
+
+            data.push_back(tugas);
+        }
+    }
+    else {
+        cout<<"Format file tidak didukung!\nHanya mendukung .txt dan .csv\n";
+        return;
+    }
+
+    file.close();
+    simpanData(data);
 }

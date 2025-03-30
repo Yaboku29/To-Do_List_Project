@@ -6,6 +6,7 @@
 
 using json=nlohmann::json;
 extern json bacaData();
+extern void simpanData(const json& data);
 void eksporData();
 void imporData();
 
