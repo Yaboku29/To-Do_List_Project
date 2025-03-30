@@ -1,5 +1,3 @@
-"Bikin Todo List" | "Tidak ada" | "Tinggi" | "Selesai"
-"Belajar Koding" | "2028-29-10" | "Tinggi" | "Belum Selesai"
-"Belajar Kalkulus" | "2025-4-10" | "Tinggi" | "Belum Selesai"
-"makan" | "Secepatnya" | "Rendah" | "Selesai"
-"Koding TODO List 2" | "GATAU" | "Tinggi" | "Belum Selesai"
+"Koding TodoList" | "Sampai Selesai" | "Tinggi" | "Belum Selesai"
+"Belajar Kalkulus" | "Sampai Paham" | "Tinggi" | "Belum Selesai"
+"Belajar STI" | "Sampai Paham" | "Sedang" | "Belum Selesai"
