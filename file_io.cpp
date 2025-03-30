@@ -12,6 +12,8 @@ void eksporData(){
         return;
     }
     int pilihan;
+    string filename;
+
     cout<<"Pilih format ekspor:\n";
     cout<<"1. .txt (Teks biasa)\n";
     cout<<"2. .csv (Bisa dibuka di Excel)\n";
@@ -22,7 +24,8 @@ void eksporData(){
         cout<<"Input invalid\n";
         return;
     }
-    string filename=(pilihan==1)?"todo_export.txt":"todo_export.csv";
+    if(pilihan==1) filename+=".txt";
+    else filename+=".csv";
     ofstream file(filename);
     if(!file.is_open()){
         cout<<"Gagal membuka file!\n";
