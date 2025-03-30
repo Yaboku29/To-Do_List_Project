@@ -65,7 +65,7 @@ void imporData(){
         return;
     }
 
-    json data=bacaData();
+    json data;
 
     size_t dotPos=filename.find_last_of(".");
     if(dotPos==string::npos){
@@ -84,6 +84,15 @@ void imporData(){
             getline(ss,deadline,'|');
             getline(ss,prioritas,'|');
             getline(ss,status,'|');
+            
+            if (!deskripsi.empty() && deskripsi.front() == '"' && deskripsi.back() == '"')
+                deskripsi.erase(0, 1), deskripsi.pop_back();
+            if (!deadline.empty() && deadline.front() == '"' && deadline.back() == '"')
+                deadline.erase(0, 1), deadline.pop_back();
+            if (!prioritas.empty() && prioritas.front() == '"' && prioritas.back() == '"')
+                prioritas.erase(0, 1), prioritas.pop_back();
+            if (!status.empty() && status.front() == '"' && status.back() == '"')
+                status.erase(0, 1), status.pop_back();
 
             json tugas={
                 {"deskripsi",deskripsi},
@@ -112,6 +121,15 @@ void imporData(){
             getline(ss,prioritas,',');
             getline(ss,status,',');
 
+            if (!deskripsi.empty() && deskripsi.front() == '"' && deskripsi.back() == '"')
+                deskripsi.erase(0, 1), deskripsi.pop_back();
+            if (!deadline.empty() && deadline.front() == '"' && deadline.back() == '"')
+                deadline.erase(0, 1), deadline.pop_back();
+            if (!prioritas.empty() && prioritas.front() == '"' && prioritas.back() == '"')
+                prioritas.erase(0, 1), prioritas.pop_back();
+            if (!status.empty() && status.front() == '"' && status.back() == '"')
+                status.erase(0, 1), status.pop_back();
+
             json tugas={
                 {"deskripsi",deskripsi},
                 {"deadline",deadline},
@@ -128,5 +146,15 @@ void imporData(){
     }
 
     file.close();
-    simpanData(data);
+
+    ofstream outFile("todolist.json");
+    if(!outFile.is_open()){
+        cout<<"Gagal menyimpan data ke JSON!\n";
+        return;
+    }
+    outFile<<data.dump(4);
+    outFile.close();
+
+    cout<<"Data berhasil diimpor dan disimpan!\n";
+    //simpanData(data);
 }
