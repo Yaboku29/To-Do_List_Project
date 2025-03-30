@@ -95,16 +95,16 @@ void imporData(){
             getline(ss,status,'|');
             
             //Hapus Kutipan
-            deskripsi=cleanString(trim(deskripsi));
-            deadline=cleanString(trim(deadline));
-            prioritas=cleanString(trim(prioritas));
-            status=cleanString(trim(status));
+            
+            
+            
+            
 
             json tugas={
-                {"deskripsi",deskripsi},
-                {"deadline",deadline},
-                {"prioritas",prioritas},
-                {"status",status}
+                {"deskripsi",deskripsi=cleanString(trim(deskripsi))},
+                {"deadline",deadline=cleanString(trim(deadline))},
+                {"prioritas",prioritas=cleanString(trim(prioritas))},
+                {"status",status=cleanString(trim(status))}
             };
 
             data.push_back(tugas);
@@ -127,16 +127,16 @@ void imporData(){
             getline(ss,prioritas,',');
             getline(ss,status,',');
 
-            deskripsi=cleanString(trim(deskripsi));
-            deadline=cleanString(trim(deadline));
-            prioritas=cleanString(trim(prioritas));
-            status=cleanString(trim(status));
+            
+            
+            
+            
 
             json tugas={
-                {"deskripsi",deskripsi},
-                {"deadline",deadline},
-                {"prioritas",prioritas},
-                {"status",status}
+                {"deskripsi",deskripsi=cleanString(trim(deskripsi))},
+                {"deadline",deadline=cleanString(trim(deadline))},
+                {"prioritas",prioritas=cleanString(trim(prioritas))},
+                {"status",status=cleanString(trim(status))}
             };
 
             data.push_back(tugas);
