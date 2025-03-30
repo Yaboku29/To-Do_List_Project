@@ -12,7 +12,7 @@ string trim(const string& str){
 }
 
 string cleanString(const string& str){
-    return regex_replace(str,std::regex(R"(\\\")"),"\"");
+    return regex_replace(str,regex(R"(\\\")"),"\"");
 }
 
 void eksporData(){
