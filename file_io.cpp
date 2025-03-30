@@ -19,7 +19,9 @@ void eksporData(){
     cout<<"2. .csv (Bisa dibuka di Excel)\n";
     cout<<"Pilihan: ";
     cin>>pilihan;
-
+    cin.ignore();
+    cout<<"Masukkan nama file: ";
+    getline(cin,filename);
     if(pilihan<1||pilihan>2){
         cout<<"Input invalid\n";
         return;
