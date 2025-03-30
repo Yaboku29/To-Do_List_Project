@@ -119,7 +119,7 @@ void menu2(){
         menu1();
         break;
     case 10:
-        system("pause");
+       // system("pause");
         menu1();
         break;
     default:
