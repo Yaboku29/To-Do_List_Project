@@ -5,4 +5,4 @@ Kerja sama Yaboku & GPT.\
 
 ## DOWNLOAD
 (PC Only)\
-[Klik di sini untuk mengunduh app To-Do List](
+[![Download Aplikasi](https://img.shields.io/badge/Download-Exe-blue?style=for-the-badge&logo=windows)](https://github.com/Yaboku29/To-Do_List_Project.git/raw/main/todo_app.exe)
