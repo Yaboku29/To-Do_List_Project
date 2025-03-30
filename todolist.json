@@ -1,29 +1,5 @@
 [
     {
-        "deadline": "Tidak ada",
-        "deskripsi": "Bikin Todo List",
-        "prioritas": "Tinggi",
-        "status": "Selesai"
-    },
-    {
-        "deadline": "2028-29-10",
-        "deskripsi": "Belajar Koding",
-        "prioritas": "Tinggi",
-        "status": "Belum Selesai"
-    },
-    {
-        "deadline": "2025-4-10",
-        "deskripsi": "Belajar Kalkulus",
-        "prioritas": "Tinggi",
-        "status": "Belum Selesai"
-    },
-    {
-        "deadline": "GATAU",
-        "deskripsi": "Koding TODO List 2",
-        "prioritas": "Tinggi",
-        "status": "Belum Selesai"
-    },
-    {
         "deadline": " \"Tidak ada\" ",
         "deskripsi": "\"Bikin Todo List\" ",
         "prioritas": " \"Tinggi\" ",
