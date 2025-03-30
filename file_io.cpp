@@ -5,6 +5,16 @@
 using json=nlohmann::json;
 using namespace std;
 
+string trim(const string& str){
+    size_t first=str.find_first_not_of(" \t\n\r");
+    size_t last=str.find_last_not_of(" \t\n\r");
+    return (first==string::npos) ? "" : str.substr(first,(last-first+1));
+}
+
+string cleanString(const string& str){
+    return regex_replace(str,std::regex(R"(\\\")"),"\"");
+}
+
 void eksporData(){
     json data=bacaData();
     clearScreen();
@@ -85,14 +95,11 @@ void imporData(){
             getline(ss,prioritas,'|');
             getline(ss,status,'|');
             
-            if (!deskripsi.empty() && deskripsi.front() == '"' && deskripsi.back() == '"')
-                deskripsi.erase(0, 1), deskripsi.pop_back();
-            if (!deadline.empty() && deadline.front() == '"' && deadline.back() == '"')
-                deadline.erase(0, 1), deadline.pop_back();
-            if (!prioritas.empty() && prioritas.front() == '"' && prioritas.back() == '"')
-                prioritas.erase(0, 1), prioritas.pop_back();
-            if (!status.empty() && status.front() == '"' && status.back() == '"')
-                status.erase(0, 1), status.pop_back();
+            //Hapus Kutipan
+            deskripsi=cleanString(trim(deskripsi));
+            deadline=cleanString(trim(deadline));
+            prioritas=cleanString(trim(prioritas));
+            status=cleanString(trim(status));
 
             json tugas={
                 {"deskripsi",deskripsi},
@@ -121,14 +128,10 @@ void imporData(){
             getline(ss,prioritas,',');
             getline(ss,status,',');
 
-            if (!deskripsi.empty() && deskripsi.front() == '"' && deskripsi.back() == '"')
-                deskripsi.erase(0, 1), deskripsi.pop_back();
-            if (!deadline.empty() && deadline.front() == '"' && deadline.back() == '"')
-                deadline.erase(0, 1), deadline.pop_back();
-            if (!prioritas.empty() && prioritas.front() == '"' && prioritas.back() == '"')
-                prioritas.erase(0, 1), prioritas.pop_back();
-            if (!status.empty() && status.front() == '"' && status.back() == '"')
-                status.erase(0, 1), status.pop_back();
+            deskripsi=cleanString(trim(deskripsi));
+            deadline=cleanString(trim(deadline));
+            prioritas=cleanString(trim(prioritas));
+            status=cleanString(trim(status));
 
             json tugas={
                 {"deskripsi",deskripsi},
