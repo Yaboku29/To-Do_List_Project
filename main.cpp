@@ -59,8 +59,6 @@ void menu1(){
         break;
     case 5:
         menu2();
-        system("pause");
-        menu1();
         break;
     default:
         cout<<"Pilihan tidak valid, coba lagi.\n";
