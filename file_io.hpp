@@ -5,7 +5,7 @@
 #include <regex>
 #include <string>
 #include "json.hpp"
-
+using namespace std;
 using json=nlohmann::json;
 extern json bacaData();
 extern void simpanData(const json& data);

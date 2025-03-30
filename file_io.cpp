@@ -3,7 +3,6 @@
 #include <fstream>
 #include <sstream>
 using json=nlohmann::json;
-using namespace std;
 
 string trim(const string& str){
     size_t first=str.find_first_not_of(" \t\n\r");
